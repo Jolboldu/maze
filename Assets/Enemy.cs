@@ -22,6 +22,14 @@ public class Enemy : MonoBehaviour
       agent.SetDestination(player.transform.position);
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+       if(collision.gameObject.tag == "Player")
+       {
+          player.TakeDamage(50.0f);
+       }
+    }
+
     public void TakeDamage(float amount)
     {
       Debug.Log(health);
