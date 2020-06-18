@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,14 +31,19 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;   
 
       }   
+      if(transform.position.z < -42.0f)
+      {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+      }
     }
+
     public void TakeDamage(float amount)
     {
       health-= amount;
       if(health <= 0)
       {
         Application.Quit();
-        Destroy(gameObject);
+        // Destroy(gameObject);
       }
     } 
 }
