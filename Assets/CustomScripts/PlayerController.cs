@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     int index = 0;
 
-    public float speed = 10.0f;
+    public float speed = 20.0f;
     public float health = 100.0f;
     
     public Color c1 = Color.yellow;
