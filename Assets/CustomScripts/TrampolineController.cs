@@ -7,6 +7,7 @@ public class TrampolineController : MonoBehaviour
     public PlayerController player;
     public int trampolineCounter = 1;
     public int jumpForce = 10;
+
     void Start()
     {
 
@@ -24,7 +25,6 @@ public class TrampolineController : MonoBehaviour
        {
          if(trampolineCounter > 0)
          {
-            // isDisabled = true;
             player.Jump(jumpForce);
             trampolineCounter--;
          }
