@@ -6,21 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    int index = 0;
 
-    public float speed = 20.0f;
+    public float speed = 30.0f;
     public float health = 100.0f;
     
-    public Color c1 = Color.yellow;
-    public Color c2 = Color.red;
 
-    public Vector3 jump;
+    private Vector3 jump;
     public float jumpForce = 1.0f;
-    public bool isGrounded;
+    private bool isGrounded;
     Rigidbody rb;
-    LineRenderer lineRenderer;
 
-    public MaterialController wall;
+    public GameObject myTextgameObject;
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +30,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      // LineRenderer lineRenderer = GetComponent<LineRenderer>();
-      // lineRenderer.SetPosition(index, transform.position);
         
       if(isGrounded)
       {
@@ -53,6 +47,15 @@ public class PlayerController : MonoBehaviour
       {
         Cursor.lockState = CursorLockMode.None;
       }
+
+      if(Input.GetKeyDown("e"))
+      {
+        if(myTextgameObject)
+        {
+            Destroy(myTextgameObject);
+        }
+      }
+
 
     }
     

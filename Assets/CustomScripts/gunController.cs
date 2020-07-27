@@ -1,16 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gunController : MonoBehaviour
 {
     public float damage = 20.0f;
     public float range = 1000.0f;
     public int ammunition = 8;
-    // public ParticleSystem flash;
-
+    
+    private AudioSource sound;
+    public GameObject myTextgameObject;
+    private Text ourComponent;
     public Camera cam;
 
+    void Start()
+    {
+        sound = GetComponent<AudioSource>();
+        ourComponent = myTextgameObject.GetComponent<Text>();
+        ourComponent.text = ammunition.ToString();
+    }
 
     // Update is called once per frame
     void Update()
@@ -21,7 +30,10 @@ public class gunController : MonoBehaviour
           if(ammunition > 0)
           {
             Shoot();
+            sound.Play();
             ammunition--;
+            ourComponent.text = ammunition.ToString();
+
           }
         }
     }
