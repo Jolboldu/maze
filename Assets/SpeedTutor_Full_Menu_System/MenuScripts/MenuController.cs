@@ -9,6 +9,7 @@ namespace SpeedTutorMainMenuSystem
 {
     public class MenuController : MonoBehaviour
     {
+
         #region Default Values
         [Header("Default Menu Values")]
         // [SerializeField] private float defaultBrightness;
@@ -18,7 +19,7 @@ namespace SpeedTutorMainMenuSystem
 
         [Header("Levels To Load")]
         public string _newGameButtonLevel;
-        private string levelToLoad;
+        private int levelToLoad;
 
         private int menuNumber;
         #endregion
@@ -93,7 +94,7 @@ namespace SpeedTutorMainMenuSystem
                 }
                 else
                 {
-                    Application.Quit();
+                    // Application.Quit();
                 }
             }
         }
@@ -265,21 +266,33 @@ namespace SpeedTutorMainMenuSystem
         {
             if (ButtonType == "Yes")
             {
-                if (PlayerPrefs.HasKey("SavedSummer"))
+                for(int i = 6; i >= 1; --i)
                 {
-                    Debug.Log("I WANT TO LOAD THE SAVED GAME");
+                  if (PlayerPrefs.HasKey(i.ToString()))
+                  {
                     //LOAD LAST SAVED SCENE
-                    levelToLoad = PlayerPrefs.GetString("SavedLevel");
+                    levelToLoad = PlayerPrefs.GetInt(i.ToString());
                     SceneManager.LoadScene(levelToLoad);
+                    break;
+                  }
+                  else if(i == 1)
+                  {
+                    SceneManager.LoadScene(1);
+                  }
                 }
 
-                else
-                {
-                    Debug.Log("Load Game Dialog");
-                    menuDefaultCanvas.SetActive(false);
-                    loadGameDialog.SetActive(false);
-                    noSaveDialog.SetActive(true);
-                }
+                // menuDefaultCanvas.SetActive(false);
+                // loadGameDialog.SetActive(false);
+                // noSaveDialog.SetActive(true);
+
+                //LOAD LAST SAVED SCENE
+                
+                // SceneManager.LoadScene(1);
+                  
+                // else
+                // {
+                //     
+                // }
             }
 
             if (ButtonType == "No")

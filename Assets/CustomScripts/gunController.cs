@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class gunController : MonoBehaviour
 {
     public float damage = 20.0f;
-    public float range = 1000.0f;
+    public float range = 10000.0f;
     public int ammunition = 8;
     
     private AudioSource sound;
@@ -41,8 +41,7 @@ public class gunController : MonoBehaviour
     void Shoot()
     {
       RaycastHit hit;
-      // flash.Play();
-
+      
       if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
       {
         

@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
       Cursor.lockState = CursorLockMode.Locked;   
+      Cursor.visible = false;
+
       rb = GetComponent<Rigidbody>();
       jump = new Vector3(0.0f, 2.0f, 0.0f); 
     }
@@ -43,10 +45,10 @@ public class PlayerController : MonoBehaviour
       }
       
 
-      if(Input.GetKeyDown("escape"))
-      {
-        Cursor.lockState = CursorLockMode.None;
-      }
+      // if(Input.GetKeyDown("escape"))
+      // {
+      //   // Cursor.lockState = CursorLockMode.None;
+      // }
 
       if(Input.GetKeyDown("e"))
       {
@@ -73,8 +75,10 @@ public class PlayerController : MonoBehaviour
       health-= amount;
       if(health <= 0)
       {
-        Application.Quit();
-        Destroy(gameObject);
+        // Cursor.lockState = CursorLockMode.None;
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);              
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);              
       }
     } 
 
