@@ -8,7 +8,7 @@ public class CameraRotation : MonoBehaviour
     Vector2 mouseLook;
     Vector2 smoothV;
     
-    public float sencetivity = 5.0f;
+    // public float sencetivity = 0.0f;
     public float smoothing = 2.0f;
     
     GameObject character;
@@ -22,8 +22,9 @@ public class CameraRotation : MonoBehaviour
     void Update()
     {
       var md = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-      md = Vector2.Scale(md, new Vector2(sencetivity * smoothing, sencetivity * smoothing));
-      
+      // md = Vector2.Scale(md, new Vector2(sencetivity * smoothing, sencetivity * smoothing));
+      md = Vector2.Scale(md, new Vector2(8,8));
+
       smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1.0f / smoothing);
       smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1.0f / smoothing);
       

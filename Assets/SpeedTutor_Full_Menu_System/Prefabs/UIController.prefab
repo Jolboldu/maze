@@ -2703,7 +2703,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d7ab24ae9adf65b408296134bbf9ee29, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3965,7 +3965,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcbdb54739de444ab8e0dc4b527da94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultBrightness: 1
   defaultVolume: 0.5
   defaultSen: 4
   defaultInvertY: 0
@@ -3983,9 +3982,6 @@ MonoBehaviour:
   controllerSenText: {fileID: 114036040233595794}
   controllerSenSlider: {fileID: 114866046668010596}
   controlSenFloat: 4
-  brightnessEffect: {fileID: 0}
-  brightnessSlider: {fileID: 114414691622253428}
-  brightnessText: {fileID: 114954420297510558}
   volumeText: {fileID: 114662438807354912}
   volumeSlider: {fileID: 114272391833239024}
   invertYToggle: {fileID: 114897183776236306}
